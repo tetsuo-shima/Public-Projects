@@ -7,10 +7,11 @@
 package scrollable.tip.calculator;
 
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import java.awt.event.*;
 import java.text.DecimalFormat;
 
 /**
@@ -26,9 +27,9 @@ public class CalculatorWindow extends JFrame{
     private final JPanel billPanel;
     private final PromptData tipOutput;
     private final JPanel tipPanel;
-    double tipPercentage;
-    double bill;
-    double tip;
+    private double tipPercentage;
+    private double bill;
+    private double tip;
     
     public CalculatorWindow() {
         WINDOW_WIDTH = 350;
