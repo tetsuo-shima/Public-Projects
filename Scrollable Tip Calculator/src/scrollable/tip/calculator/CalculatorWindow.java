@@ -26,6 +26,9 @@ public class CalculatorWindow extends JFrame{
     private final JPanel billPanel;
     private final PromptData tipOutput;
     private final JPanel tipPanel;
+    double tipPercentage;
+    double bill;
+    double tip;
     
     public CalculatorWindow() {
         WINDOW_WIDTH = 350;
@@ -55,26 +58,28 @@ public class CalculatorWindow extends JFrame{
         setVisible(true);
     }
     
-    public double getTip() {
-        return tipSlider.getSlider().getValue()/100.0 * 
-                Double.parseDouble(billInput.getTextField().getText());
+    public void outputTip() {
+        tipPercentage = tipSlider.getSlider().getValue()/100.0;
+        bill = Double.parseDouble(billInput.getTextField().getText());
+        tip = tipPercentage * bill;
+        tipOutput.getTextField().setText(formatTip(tip));
     }
     
-    public String formatTipBill(double cash){
+    public String formatTip(double cash){
         return new DecimalFormat("#,##0.00").format(cash);
     }
     
     private class InputTextFieldListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            tipOutput.getTextField().setText(formatTipBill(getTip()));
+            outputTip();
         }
     }
     
     private class TipSliderListener implements ChangeListener {
         @Override
         public void stateChanged(ChangeEvent event) {
-            tipOutput.getTextField().setText(formatTipBill(getTip()));
+            outputTip();
         }   
     }   
 }

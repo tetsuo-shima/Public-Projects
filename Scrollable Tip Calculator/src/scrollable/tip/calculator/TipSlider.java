@@ -15,7 +15,7 @@ import javax.swing.*;
 public class TipSlider {
     private final int ORIENTATION = JSlider.HORIZONTAL;
     private final int SLIDER_MIN = 0;
-    private final int SLIDER_MAX = 20;
+    private final int SLIDER_MAX = 30;
     private final int SLIDER_START = 10;
     private final JSlider slider;
     
