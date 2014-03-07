@@ -55,6 +55,10 @@ public class CalculatorWindow extends JFrame{
         add(sliderPanel, BorderLayout.CENTER);
         add(tipPanel, BorderLayout.SOUTH);
         
+        billPanel.setBorder(BorderFactory.createEtchedBorder());
+        sliderPanel.setBorder(BorderFactory.createEtchedBorder());
+        tipPanel.setBorder(BorderFactory.createEtchedBorder());
+        
         setVisible(true);
     }
     
