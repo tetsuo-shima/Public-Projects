@@ -22,7 +22,7 @@ public class FibonacciArithmetic {
         int fibCount;
         long fib1 = 0L;
         long fib2 = 1L;
-        long total = 0L;
+        long total = 1L;
         
         System.out.print("Enter the nth Fibonacci number to be found: ");
         fibCount = keyboard.nextInt();
